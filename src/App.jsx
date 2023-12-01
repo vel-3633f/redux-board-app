@@ -5,6 +5,9 @@ function App() {
   console.log(ary);
   return (
     <div className="bg-gray-600 h-screen w-screen">
+      <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
       <div>
         {ary.map((obj) => {
           return (
