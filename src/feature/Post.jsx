@@ -4,13 +4,17 @@ import { PostsData } from "../DummyData";
 export const postSlice = createSlice({
   name: "post",
   initialState: {
-    value: PostsData
+    value: PostsData,
   },
   reducers: {
     addPost: (state, action) => {
-      state.value.push(action.payload)
-    }
-  }
-})
+      state.value.push(action.payload);
+    },
+    deletePost: (state, action) => {
+      state.value = state.value.filter((post) => post.id !== action.payload);
+    },
+  },
+});
 
+export const { addPost, deletePost } = postSlice.actions;
 export default postSlice.reducer;
